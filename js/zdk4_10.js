@@ -59,4 +59,14 @@ function zdk4() {
 function zdk10() {
   const fruits = input_fruits();
   const group_by_color_array = group_fruits_by_color(fruits);
+
+  console.log(group_by_color_array);
+
+  const min_cost_of_each_fruit_color = group_by_color_array
+    .map((fruits_group) => {
+      const min_cost = Math.min(...fruits_group.map((fruit) => fruit.cost));
+      return min_cost;
+    })
+    .reduce((sum, min_cost) => sum + min_cost, 0);
+  console.log(min_cost_of_each_fruit_color);
 }
