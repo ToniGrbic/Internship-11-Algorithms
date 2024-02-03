@@ -1,10 +1,10 @@
 function zdk5() {
-  let athletes = [];
+  const athletes = [];
 
   while (true) {
-    let name = prompt("Enter athlete's first name:");
-    let surname = prompt("Enter athlete's last name:");
-    let points = Number(prompt("Enter athlete's points:"));
+    const name = prompt("Enter athlete's first name:");
+    const surname = prompt("Enter athlete's last name:");
+    const points = Number(prompt("Enter athlete's points:"));
 
     if (isNaN(points) || points <= 0) {
       alert("Invalid points input, try again!");
@@ -16,9 +16,9 @@ function zdk5() {
     if (!confirm("Do you want to continue input?")) break;
   }
 
-  let max_points = Math.max(...athletes.map((athlete) => athlete.points));
+  const max_points = Math.max(...athletes.map((athlete) => athlete.points));
 
-  let categories = [
+  const categories = [
     { name: "0-25%", range: [0, Math.round(0.25 * max_points)] },
     {
       name: "25-50%",
@@ -32,7 +32,7 @@ function zdk5() {
   ];
 
   for (const category of categories) {
-    let athletes_by_category = athletes.filter((athlete) => {
+    const athletes_by_category = athletes.filter((athlete) => {
       return (
         athlete.points >= category.range[0] &&
         athlete.points <= category.range[1]

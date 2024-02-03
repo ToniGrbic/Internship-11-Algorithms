@@ -7,9 +7,9 @@ function zdk4_10(zdk) {
 const input_fruits = () => {
   const fruits = [];
   while (true) {
-    let name = prompt("Enter fruit name:");
-    let color = prompt("Enter fruit color:");
-    let calories = Number(prompt("Enter fruit calories:"));
+    const name = prompt("Enter fruit name:");
+    const color = prompt("Enter fruit color:");
+    const calories = Number(prompt("Enter fruit calories:"));
 
     if (isNaN(calories) || calories <= 0) {
       alert("Invalid calories input, try again!");
@@ -26,16 +26,16 @@ const input_fruits = () => {
 const input_fruits_with_cost = () => {
   const fruits = [];
   while (true) {
-    let name = prompt("Enter fruit name:");
-    let color = prompt("Enter fruit color:");
+    const name = prompt("Enter fruit name:");
+    const color = prompt("Enter fruit color:");
 
-    /* let calories = Number(prompt("Enter fruit calories:"));
+    /* const calories = Number(prompt("Enter fruit calories:"));
     if (isNaN(calories) || calories <= 0) {
       alert("Invalid calories input, try again!");
       continue;
     } */
 
-    let cost = Number(prompt("Enter fruit cost:"));
+    const cost = Number(prompt("Enter fruit cost:"));
     if (isNaN(cost) || cost <= 0) {
       alert("Invalid cost input, try again!");
       continue;
