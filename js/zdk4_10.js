@@ -107,5 +107,8 @@ function zdk10() {
     "Min cost of fruits from each color: ",
     Math.round(min_cost * 100) / 100
   );
-  console.log("Bought fruits: ", min_cost_fruits_of_each_color);
+  console.log(
+    "Bought fruits, sorted by name length: ",
+    min_cost_fruits_of_each_color
+  );
 }
