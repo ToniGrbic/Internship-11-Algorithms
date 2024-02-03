@@ -1,7 +1,7 @@
 function zdk6_7(zdk) {
   if (zdk === 6) zdk6();
   else if (zdk === 7) zdk7();
-  else console.log("Invalid zdk number");
+  else alert("Invalid zdk number");
 }
 
 const input_fruits = () => {

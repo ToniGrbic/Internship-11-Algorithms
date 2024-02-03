@@ -1,7 +1,7 @@
 function zdk2_3(zdk) {
   if (zdk === 2) zdk2();
   else if (zdk === 3) zdk3();
-  else console.log("Invalid zdk number");
+  else alert("Invalid zdk number");
 }
 
 const input_employees = () => {
