@@ -4,7 +4,7 @@ function zdk6_7(zdk) {
   else alert("Invalid zdk number");
 }
 
-const input_fruits = () => {
+const input_fruits_with_price = () => {
   const fruits = [];
   while (true) {
     const name = prompt("Enter fruit name:");
@@ -26,7 +26,7 @@ const input_fruits = () => {
 };
 
 function zdk6() {
-  const fruits = input_fruits();
+  const fruits = input_fruits_with_price();
   console.log("All Fruits: ", fruits);
   console.log("Unabalible fruits and their indexes: ");
   fruits.forEach((fruit, index) => {
@@ -63,7 +63,7 @@ function zdk6() {
 }
 
 function zdk7() {
-  const fruits = input_fruits();
+  const fruits = input_fruits_with_price();
   const fruits_with_avalibility_color = fruits
     .map((fruit) => {
       if (fruit.is_avalible) return { ...fruit, color: "Red" };
