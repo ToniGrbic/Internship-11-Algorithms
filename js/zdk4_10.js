@@ -20,6 +20,32 @@ const input_fruits = () => {
 
     if (!confirm("Do you want to continue input new fruit?")) break;
   }
+  return fruits;
+};
+
+const input_fruits_with_cost = () => {
+  const fruits = [];
+  while (true) {
+    let name = prompt("Enter fruit name:");
+    let color = prompt("Enter fruit color:");
+
+    /* let calories = Number(prompt("Enter fruit calories:"));
+    if (isNaN(calories) || calories <= 0) {
+      alert("Invalid calories input, try again!");
+      continue;
+    } */
+
+    let cost = Number(prompt("Enter fruit cost:"));
+    if (isNaN(cost) || cost <= 0) {
+      alert("Invalid cost input, try again!");
+      continue;
+    }
+
+    fruits.push({ name, color, cost });
+
+    if (!confirm("Do you want to continue input new fruit?")) break;
+  }
+  return fruits;
 };
 
 const group_fruits_by_color = (fruits) => {
@@ -57,16 +83,29 @@ function zdk4() {
 }
 
 function zdk10() {
-  const fruits = input_fruits();
+  const fruits = input_fruits_with_cost();
   const group_by_color_array = group_fruits_by_color(fruits);
 
   console.log(group_by_color_array);
 
-  const min_cost_of_each_fruit_color = group_by_color_array
+  const min_cost_fruits_of_each_color = group_by_color_array
     .map((fruits_group) => {
       const min_cost = Math.min(...fruits_group.map((fruit) => fruit.cost));
-      return min_cost;
+      const least_expensive = fruits_group.find(
+        (fruit) => fruit.cost === min_cost
+      );
+
+      return { ...least_expensive };
     })
-    .reduce((sum, min_cost) => sum + min_cost, 0);
-  console.log(min_cost_of_each_fruit_color);
+    .sort((a, b) => a.name.length - b.name.length);
+
+  const min_cost = min_cost_fruits_of_each_color.reduce(
+    (sum, fruit) => sum + fruit.cost,
+    0
+  );
+  console.log(
+    "Min cost of fruits from each color: ",
+    Math.round(min_cost * 100) / 100
+  );
+  console.log("Bought fruits: ", min_cost_fruits_of_each_color);
 }
