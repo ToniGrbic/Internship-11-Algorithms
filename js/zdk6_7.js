@@ -62,4 +62,15 @@ function zdk6() {
   );
 }
 
-function zdk7() {}
+function zdk7() {
+  const fruits = input_fruits();
+  const fruits_with_avalibility_color = fruits
+    .map((fruit) => {
+      if (fruit.is_avalible) return { ...fruit, color: "Red" };
+      if (!fruit.is_avalible) return { ...fruit, color: "Yellow" };
+    })
+    .sort((a, b) => a.color.localeCompare(b.color))
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  console.log("Fruits with avalibility color: ", fruits_with_avalibility_color);
+}
