@@ -28,7 +28,8 @@ const input_fruits_with_price = () => {
 function zdk6() {
   const fruits = input_fruits_with_price();
   console.log("All Fruits: ", fruits);
-  console.log("Unabalible fruits and their indexes: ");
+
+  console.log("Unavalible fruits and their indexes: ");
   fruits.forEach((fruit, index) => {
     if (!fruit.is_avalible) {
       console.log(fruit.name + " " + index);
@@ -67,7 +68,7 @@ function zdk7() {
   const fruits_with_avalibility_color = fruits
     .map((fruit) => {
       if (fruit.is_avalible) return { ...fruit, color: "Red" };
-      if (!fruit.is_avalible) return { ...fruit, color: "Yellow" };
+      return { ...fruit, color: "Yellow" };
     })
     .sort((a, b) => a.color.localeCompare(b.color))
     .sort((a, b) => a.name.localeCompare(b.name));
